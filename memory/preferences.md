@@ -1,0 +1,3 @@
+# Preferences Log
+---
+<!-- Entries below -->
