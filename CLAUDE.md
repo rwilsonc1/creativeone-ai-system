@@ -41,6 +41,9 @@ creativeone-ai-system/
 ├── brands/                        ← Brand voice, positioning, audience context
 │   ├── creativeone/               ← Corporate brand (CreativeOne → Advisors/Prospects)
 │   └── advisor/                   ← Advisor voice (Advisor → Consumer/Client)
+│       ├── voice-foundation.md    ← Universal advisor voice
+│       ├── verticals/             ← Per-vertical voice adjustments (annuity, life, wealth, securities)
+│       └── individual/            ← Per-advisor overrides (created as needed)
 ├── context/                       ← Shared reference docs (compliance, tech stack, team)
 ├── templates/                     ← Reusable output structures
 │   └── email-templates/
@@ -70,19 +73,31 @@ If a request spans multiple task types, load all relevant skills.
 
 ### 2. Identify the Brand Context
 
-| If the content is... | Load this brand directory |
+| If the content is... | Load these brand files |
 |---|---|
-| **From CreativeOne** to advisors, agents, or prospects | `brands/creativeone/` |
-| **From an advisor** to their clients or prospects (writing *as* the advisor) | `brands/advisor/` |
+| **From CreativeOne** to advisors, agents, or prospects | `brands/creativeone/` — load voice-profile, positioning, audience, assets, learnings as needed |
+| **From an advisor** to their clients or prospects (writing *as* the advisor) | Load in this order (each layer overrides the last): |
+| | 1. `brands/advisor/voice-foundation.md` (always) |
+| | 2. `brands/advisor/verticals/[vertical].md` (if vertical is known: annuity, life, wealth, securities) |
+| | 3. `brands/advisor/individual/[advisor-name].md` (if one exists for this advisor) |
+| | 4. `brands/advisor/audience.md` and `brands/advisor/positioning.md` as needed |
 | **Internal** (team docs, SOPs, process docs) | No brand directory needed — use internal tone |
+
+**Advisor brand loading notes:**
+- If no vertical is specified, ask which vertical before proceeding, or use the foundation alone.
+- If no individual advisor profile exists, use foundation + vertical.
+- To create a new individual advisor profile, copy `brands/advisor/individual/_TEMPLATE.md`.
+- **All advisor-voiced content is subject to `context/compliance-guidelines.md`. No exceptions.**
 
 ### 3. Context Loading Matrix
 
 Not every skill needs every brand file. Load only what's relevant:
 
+**CreativeOne brand files:**
+
 | Skill | voice-profile | positioning | audience | assets | learnings | compliance-guidelines |
 |---|---|---|---|---|---|---|
-| Email Marketing | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Email Marketing | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ (if advisor content) |
 | SOP Writing | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
 | SLA Writing | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
 | Asana Process Building | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
@@ -91,11 +106,18 @@ Not every skill needs every brand file. Load only what's relevant:
 | Compliance Review | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ |
 | Data Analysis | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ |
 
+**Advisor brand files (when writing as an advisor):**
+
+| Skill | voice-foundation | vertical file | individual file | audience | positioning | compliance-guidelines |
+|---|---|---|---|---|---|---|
+| Email Marketing | ✅ | ✅ | ✅ (if exists) | ✅ | ✅ | ✅ (always) |
+| Compliance Review | ✅ | ✅ | ✅ (if exists) | ✅ | ✅ | ✅ (always) |
+
 ### 4. Always Load
 
 These files should be referenced on **every** session, regardless of task:
 
-- `context/compliance-guidelines.md` — When producing ANY client-facing or advisor-facing content
+- `context/compliance-guidelines.md` — When producing ANY advisor-voiced content (content written as/for advisors to their clients/prospects). Not required for CreativeOne B2B corporate marketing.
 - `context/tech-stack.md` — When the request involves platform-specific work
 - `memory/corrections.md` — Always check for past mistakes to avoid repeating them
 - `memory/preferences.md` — Always check for discovered preferences
@@ -104,7 +126,11 @@ These files should be referenced on **every** session, regardless of task:
 
 ## Compliance Rules — ALWAYS ACTIVE
 
-These rules apply to **all client-facing and advisor-facing content**, no exceptions.
+These rules apply to **all advisor-voiced content** — content written as or for licensed advisors to their clients and prospects. This includes content that falls under the regulatory oversight of the Wealth, Securities, or Insurance industries.
+
+**These rules do NOT apply to** CreativeOne B2B corporate marketing (recruiting, event marketing, service announcements to advisors). That content follows the brand voice in `brands/creativeone/` without regulatory compliance constraints.
+
+For the complete compliance reference, see: `context/compliance-guidelines.md`
 
 ### Hard Rules
 
