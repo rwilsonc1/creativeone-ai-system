@@ -82,6 +82,8 @@ Be specific about boundaries. If there's a related SOP that covers adjacent work
 
 A quick-reference list of tools, access, credentials, or prerequisites needed before starting. Use a simple bulleted list or a small table.
 
+> 📋 **Completion handoff convention (recurring operational SOPs):** The final step of a recurring ops SOP should direct the executor to (1) post a summary comment on the associated Asana task — this is the documented record of completion — then (2) send a notification ping to the Marketing Operations Manager via Microsoft Teams. Do not treat a Teams message alone as sufficient documentation. The Asana comment is the primary record.
+
 ### 5. The Procedure — *The steps*
 
 This is the core. Follow these writing rules:
@@ -167,7 +169,7 @@ Writing the SOP is only half the job. Getting people to actually use it:
 
 1. **Involve the person who does the task.** If you're writing an SOP for someone else's process, interview them first. They'll know the edge cases and gotchas that make the difference between a usable SOP and a theoretical one.
 2. **Test it with someone unfamiliar.** Have someone who hasn't done the task follow the SOP. If they get stuck, the SOP has a gap.
-3. **Store them where people already work.** Link SOPs from Asana tasks, pin them in relevant channels, or embed Scribe links in project templates. Don't rely on people remembering to go look for them.
+3. **Store them where people already work.** Link SOPs from Asana tasks, pin them in relevant Microsoft Teams channels, or embed Scribe links in project templates. Don't rely on people remembering to go look for them.
 4. **Keep them alive.** Review SOPs when the process changes. Add a calendar reminder for a quarterly review of all active SOPs.
 5. **Make them visually inviting.** A well-formatted SOP with clear headers, callout boxes, and white space gets read. A wall of text doesn't.
 

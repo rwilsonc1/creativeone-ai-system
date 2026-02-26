@@ -19,6 +19,12 @@
   - Forms and landing pages
   - Reporting and dashboards
 - **Integrations:** Connected to Zapier for cross-platform automations
+- **Unengaged contact criteria (OR logic):**
+  - Last marketing email open date has not been updated in the last 300 days, OR
+  - Marketing emails clicked has not been updated in the last 365 days
+- **Active unengaged lists:**
+  - **"Unengaged Contacts | Active"** — general unengaged population
+  - **"Unengaged Contracted Advisors"** — subset of above; contacts meeting unengaged criteria who are currently contracted with CreativeOne. Require elevated care — do not suppress or delete without notifying the Marketing Operations Manager first.
 - **Known quirks:**
   - *(Add discovered quirks here as they come up)*
 
@@ -138,6 +144,21 @@
 
 ---
 
+## Communications & Collaboration
+
+### Microsoft Teams
+- **Role:** Team communication, stakeholder notifications, channel-based collaboration
+- **Primary users:** All marketing team members
+- **Key functions we use:**
+  - Day-to-day team communication
+  - Stakeholder notifications (e.g., process completion pings to manager)
+  - Channel-based organization of topics and projects
+- **Key notes:**
+  - All team members have access — no need to note access requirements in SOPs
+  - This is the team's communication platform. **Never reference Slack.**
+
+---
+
 ## Integration Map
 
 A high-level view of how platforms connect:
@@ -151,6 +172,8 @@ Snappy Kraken (EngageOne)    → Advisor-facing (managed separately)
 WhiteSpark (Local Spark)     → Advisor-facing (managed separately)
 
 GA4 + GTM + GSC + Clarity    → Analytics layer (feeds into Looker Studio)
+
+Microsoft Teams              → Team communication layer
 ```
 
 ---

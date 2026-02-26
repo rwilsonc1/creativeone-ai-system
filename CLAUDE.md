@@ -61,12 +61,14 @@ When I make a request, follow this decision tree:
 | If the request involves... | Load this skill |
 |---|---|
 | Writing or editing a marketing email | `skills/email-marketing.md` |
+| Writing advisor-voiced marketing content (emails, landing pages, nurture sequences) | Also load `skills/compliance-marketing.md` alongside email-marketing |
 | Creating or improving an SOP | `skills/sop-writing.md` |
 | Creating or improving an SLA | `skills/sla-writing.md` |
-| Building a project, workflow, or process in Asana | `skills/asana-process-building.md` |
+| Designing or architecting a new Asana process, workflow, template, or automation system | `skills/asana-process-building.md` |
+| Building or setting up a specific Asana project (naming, sections, tasks, descriptions) | `skills/asana-project-setup.md` |
 | Building a new Zap or automation | `skills/zap-building.md` |
 | Debugging a broken Zap or automation | `skills/zap-troubleshooting.md` |
-| Reviewing content for compliance | `skills/compliance-review.md` |
+| Reviewing existing content for compliance | `skills/compliance-review.md` |
 | Analyzing data, building dashboards, or interpreting metrics | `skills/data-analysis.md` |
 
 If a request spans multiple task types, load all relevant skills.
@@ -179,6 +181,7 @@ For the full compliance reference, see: `context/compliance-guidelines.md`
 | Microsoft Clarity | Heatmaps and session recordings |
 | Cloudflare | DNS, security, performance |
 | Scribe | Visual SOP/process documentation |
+| Microsoft Teams | Team communication and stakeholder notifications |
 
 For deeper platform details, integrations, and known quirks, see: `context/tech-stack.md`
 
