@@ -277,6 +277,57 @@ Format for memory entries:
 
 ---
 
+## Session Close Protocol
+
+At the end of every productive session, proactively check whether anything from the conversation should be logged or updated. This applies in all environments, but is especially critical when working in Claude Projects (where Claude cannot write files directly and all updates require manual action).
+
+### When to Run
+
+Run the Session Close Protocol if any of the following occurred during the session:
+- I corrected an output or pushed back on an approach
+- A new preference or pattern was discovered
+- A skill, template, or system file produced incorrect or incomplete output
+- A new rule, nuance, or exception was identified
+- A significant decision was made about the project, system, or workflow
+
+### What to Output
+
+If anything warrants logging or updating, output a **Session Learnings Block** formatted exactly as shown below. This block should be self-contained and copy-paste-ready so it can be manually added to the appropriate file.
+
+```
+─────────────────────────────────────────
+SESSION LEARNINGS — [YYYY-MM-DD]
+─────────────────────────────────────────
+
+📋 CORRECTIONS (add to memory/corrections.md)
+──────────────────────────────────────────────
+### [YYYY-MM-DD] — [Brief description]
+- **Context:** [What was happening]
+- **Learning:** [What to do differently going forward]
+- **Files Updated:** [List any source files that should also be updated]
+
+📌 PREFERENCES (add to memory/preferences.md)
+──────────────────────────────────────────────
+### [YYYY-MM-DD] — [Brief description]
+- **Context:** [What was happening]
+- **Preference:** [What to do going forward]
+
+🗂️ SOURCE FILE UPDATES NEEDED
+──────────────────────────────────────────────
+File: [path/to/file.md]
+Change: [Description of what needs to be updated and why]
+
+─────────────────────────────────────────
+```
+
+Only include sections that are relevant. If there are no corrections, omit that section. If no source file updates are needed, omit that section.
+
+### If Nothing Warrants Logging
+
+If the session produced no corrections, new preferences, or system improvements, no block is needed. A brief "Nothing to log from this session" note is sufficient.
+
+---
+
 ## Continuous Improvement Protocol — CRITICAL
 
 Logging corrections to memory files is not enough. **The system must improve at the source.**
