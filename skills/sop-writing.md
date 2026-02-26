@@ -55,12 +55,20 @@ Every SOP follows this structure. Sections marked *(optional)* can be omitted fo
 
 ### 1. Header Block
 
+The header block is a 4-column metadata table at the top of every SOP. Follow this exact layout:
+
 | Field | Description |
 |---|---|
-| **Title** | Clear, specific, action-oriented. Use the format: "How to [Action] in [Platform/Context]" |
-| **Last Updated** | Date of most recent revision |
-| **Owner** | Person responsible for maintaining this SOP |
-| **Version** | Version number (v1.0, v1.1, etc.) |
+| **SOP Title** | Format: `[Department] — [Category] — [Process Name]`. Spans the full first row. |
+| **Owner** | Role title (not person's name) responsible for maintaining this SOP |
+| **Version** | `v1.0`, `v1.1`, etc. Minor for edits, major for structural rewrites. |
+| **Last Updated** | `MM/DD/YYYY` format |
+| **Cadence** | Frequency or trigger: `Monthly`, `As needed`, `Quarterly`, `Event-triggered` |
+| **Audience** | Who will read and execute this SOP |
+| **Reviewed By** *(conditional)* | Role title of the reviewer/approver (typically one level up from Owner). Include only when the SOP has a formal review/approval step. |
+| **Next Review** | Scheduled date for next review cycle (typically 3–6 months out) |
+
+See `skills/sop-pattern-guide.md` for the exact table layout and `templates/sop-templates/sop-template-blank.md` for the copy-paste skeleton.
 
 ### 2. Purpose — *Why this matters* (2–3 sentences max)
 
@@ -82,13 +90,17 @@ Be specific about boundaries. If there's a related SOP that covers adjacent work
 
 A quick-reference list of tools, access, credentials, or prerequisites needed before starting. Use a simple bulleted list or a small table.
 
-> 📋 **Completion handoff convention (recurring operational SOPs):** The final step of a recurring ops SOP should direct the executor to (1) post a summary comment on the associated Asana task — this is the documented record of completion — then (2) send a notification ping to the Marketing Operations Manager via Microsoft Teams. Do not treat a Teams message alone as sufficient documentation. The Asana comment is the primary record.
-
 ### 5. The Procedure — *The steps*
 
-This is the core. Follow these writing rules:
+This is the core. The procedure uses **named phases** to group related steps. This is the defining structural element of CreativeOne SOPs.
 
-**Structure rules:**
+**Phase structure:**
+- Break the procedure into 3–6 phases, each with a name: `Phase [#] — [Action-Oriented Name]`
+- Phase names should be short and describe what happens: "Start the Session," "Review the Draft," "Request Corrections"
+- Each phase contains numbered steps underneath, with callout boxes at high-risk or high-value moments.
+- See the real examples in `templates/sop-templates/` for how phases work in practice.
+
+**Step writing rules:**
 - **One step = one action.** If a step has "and" in it, consider splitting it into two steps.
 - **Start every step with a verb.** "Click," "Open," "Navigate," "Enter," "Select," "Verify."
 - **Number all steps.** Even if there are sub-steps, use numbered hierarchy (1, 1a, 1b, 2, 3...).
@@ -117,13 +129,13 @@ This is the core. Follow these writing rules:
 
 One to three checkpoints that confirm the procedure was completed successfully. This closes the loop and gives the reader confidence they did it right.
 
-### 7. Troubleshooting *(optional)*
+### 7. Troubleshooting
 
-A short FAQ-style section for common issues. Format: **Problem → Solution.** Only include if there are known recurring issues.
+A short FAQ-style section for common issues. Format: **Problem → Solution** as a two-column table. Minimum 3 rows, maximum 8. Write problems as symptoms the executor would actually experience — not technical root causes. Solutions must be specific and actionable. *May be omitted for simple 1-page SOPs where no recurring issues exist.*
 
-### 8. Related Resources *(optional)*
+### 8. Related Resources
 
-Links to related SOPs, Scribe walkthroughs, external documentation, or team contacts.
+Links to related SOPs, Scribe walkthroughs, skill files, or team contacts. Include the document name, file path or location, and a one-clause description of what it is. Required unless the SOP has no meaningful related materials.
 
 ---
 
@@ -169,7 +181,7 @@ Writing the SOP is only half the job. Getting people to actually use it:
 
 1. **Involve the person who does the task.** If you're writing an SOP for someone else's process, interview them first. They'll know the edge cases and gotchas that make the difference between a usable SOP and a theoretical one.
 2. **Test it with someone unfamiliar.** Have someone who hasn't done the task follow the SOP. If they get stuck, the SOP has a gap.
-3. **Store them where people already work.** Link SOPs from Asana tasks, pin them in relevant Microsoft Teams channels, or embed Scribe links in project templates. Don't rely on people remembering to go look for them.
+3. **Store them where people already work.** Link SOPs from Asana tasks, pin them in relevant channels, or embed Scribe links in project templates. Don't rely on people remembering to go look for them.
 4. **Keep them alive.** Review SOPs when the process changes. Add a calendar reminder for a quarterly review of all active SOPs.
 5. **Make them visually inviting.** A well-formatted SOP with clear headers, callout boxes, and white space gets read. A wall of text doesn't.
 
@@ -179,13 +191,13 @@ Writing the SOP is only half the job. Getting people to actually use it:
 
 Use a consistent naming pattern so SOPs are easy to find and organize:
 
-**Pattern:** `[Department] - [Process Category] - [Specific Task]`
+**Pattern:** `[Department] — [Category] — [Specific Task]`
 
 **Examples:**
-- `Marketing Ops - Email - Pre-Send Quality Check`
-- `Marketing Ops - Asana - Creating a New Event Project`
-- `Marketing Ops - Zapier - Troubleshooting a Failed Zap`
-- `Marketing Comms - EngageOne - Adding a New Advisor`
+- `Marketing Ops — Email — Pre-Send Quality Check`
+- `Marketing Ops — Asana — Creating a New Event Project`
+- `Marketing Ops — AI — Building SOPs Using the Claude Project`
+- `Marketing Comms — EngageOne — Adding a New Advisor`
 
 ---
 
@@ -201,6 +213,25 @@ Use a consistent naming pattern so SOPs are easy to find and organize:
 - [ ] Scribe walkthrough is linked (if applicable)
 - [ ] Someone unfamiliar with the task could follow this without asking for help
 - [ ] Length is within the guidelines for the complexity level
+
+---
+
+## Templates and Examples
+
+Before drafting any new SOP, reference the template files to match the established structure, tone, and level of detail. These are derived from real, team-approved SOPs.
+
+| File | What it is | When to use it |
+|---|---|---|
+| `skills/sop-pattern-guide.md` | Structural rules extracted from real SOPs — header block layout, phase naming, callout types, troubleshooting format, tone rules | **Read first** before building any SOP. This is the authoritative structural reference. |
+| `templates/sop-templates/sop-template-blank.md` | Empty skeleton with all sections and placeholder guidance | Use as the starting framework — fill in each section. |
+| `templates/sop-templates/sop-example-using-claude-project.md` | Real SOP: "Using the Claude Project" — broad reference/guide SOP with starter prompts, quick-reference tables, and extensive troubleshooting | Study for SOPs that are reference guides or onboarding docs (many sections, tables, starter prompts). |
+| `templates/sop-templates/sop-example-building-sops-with-claude.md` | Real SOP: "Building SOPs Using the Claude Project" — procedural SOP with clear phased workflow, review checklist, and session close protocol | Study for SOPs that document a specific end-to-end workflow (phased procedure, clear start/finish). |
+
+**How to use these files:**
+1. Read `sop-pattern-guide.md` to internalize the structural rules.
+2. Start from `sop-template-blank.md` as the skeleton.
+3. Reference whichever example SOP is closest to the type of SOP being built (reference guide vs. procedural workflow).
+4. Follow the rules in this skill file for writing quality, callout placement, and adoption practices.
 
 ---
 

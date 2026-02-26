@@ -38,6 +38,7 @@ CLAUDE.md (Brain) → Skills (Execution) → Brands (Context) → Templates (Out
 creativeone-ai-system/
 ├── CLAUDE.md                      ← You are here
 ├── skills/                        ← How to execute specific task types
+│   └── sop-pattern-guide.md       ← Authoritative SOP structural rules (loaded alongside sop-writing.md)
 ├── brands/                        ← Brand voice, positioning, audience context
 │   ├── creativeone/               ← Corporate brand (CreativeOne → Advisors/Prospects)
 │   └── advisor/                   ← Advisor voice (Advisor → Consumer/Client)
@@ -46,7 +47,11 @@ creativeone-ai-system/
 │       └── individual/            ← Per-advisor overrides (created as needed)
 ├── context/                       ← Shared reference docs (compliance, tech stack, team)
 ├── templates/                     ← Reusable output structures
-│   └── email-templates/
+│   ├── email-templates/
+│   └── sop-templates/             ← SOP skeleton + real SOP examples
+│       ├── sop-template-blank.md  ← Copy-paste starting skeleton for all SOPs
+│       ├── sop-example-using-claude-project.md     ← Reference guide SOP example
+│       └── sop-example-building-sops-with-claude.md ← Procedural SOP example
 └── memory/                        ← Persistent corrections, preferences, learnings
 ```
 
@@ -62,8 +67,9 @@ When I make a request, follow this decision tree:
 |---|---|
 | Writing or editing a marketing email | `skills/email-marketing.md` |
 | Writing advisor-voiced marketing content (emails, landing pages, nurture sequences) | Also load `skills/compliance-marketing.md` alongside email-marketing |
-| Creating or improving an SOP | `skills/sop-writing.md` |
+| Creating or improving an SOP | `skills/sop-writing.md` + `skills/sop-pattern-guide.md` |
 | Creating or improving an SLA | `skills/sla-writing.md` |
+| Defining roles, responsibilities, or accountability for a process, project, or SOP | `skills/raci-framework.md` |
 | Designing or architecting a new Asana process, workflow, template, or automation system | `skills/asana-process-building.md` |
 | Building or setting up a specific Asana project (naming, sections, tasks, descriptions) | `skills/asana-project-setup.md` |
 | Building a new Zap or automation | `skills/zap-building.md` |
